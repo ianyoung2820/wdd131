@@ -1,69 +1,94 @@
 /* Base styles */
 body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 40px 0;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  /* Centered content box with border */
-  .wrapper {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    border: 1px solid #ccc;
-    text-align: left;
-    background-color: white;
-  }
-  
-  /* Headings */
-  h1 {
-    text-align: center;
-    font-size: 1.8em;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    text-align: center;
-    font-size: 1em;
-    letter-spacing: 3px;
-    color: #006EB6;
-    margin-top: 0;
-    margin-bottom: 30px;
-  }
-  
-  /* Paragraphs */
-  p {
-    margin-bottom: 20px;
-  }
-  
-  p em {
-    font-style: italic;
-  }
-  
-  /* Ordered list */
-  ol {
-    padding-left: 20px;
-  }
-  
-  ol li {
-    margin-bottom: 15px;
-  }
-  
-  /* Logo */
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .logo-img {
-    display: block;
-    margin: 0 auto;    /* centers it */
-    max-width: 150px;   /* caps its width */
-    height: auto;       /* preserves aspect ratio */
-  }
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 40px 0;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+
+/* Centered content box with border */
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  text-align: left;
+}
+
+/* Headings */
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1em;
+  letter-spacing: 3px;
+  color: #006EB6;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 20px;
+  color: #000;
+}
+
+p em {
+  font-style: italic;
+}
+
+/* Ordered list */
+ol {
+  padding-left: 20px;
+}
+
+ol li {
+  margin-bottom: 15px;
+  color: #000;
+}
+
+/* Logo */
+.logo-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+  height: auto;
+}
+
+/* --------------------
+ Dark Theme Overrides
+ -------------------- */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .wrapper {
+  background-color: #1f1f1f;
+  border-color: #444;
+}
+
+body.dark h1 {
+  color: #fff;
+}
+
+body.dark h2 {
+  color: #82B1FF;
+}
+
+body.dark p,
+body.dark ol li {
+  color: #ccc;
+}
