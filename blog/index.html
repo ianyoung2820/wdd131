@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0"
+  >
+  <meta
+    name="description"
+    content="Kids Read For Fun – a blog of children's book reviews."
+  >
+  <meta name="author" content="Ian Young">
+  <title>Kids Read For Fun</title>
+
+  <!-- Google Font for headings -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Your blog stylesheet -->
+  <link rel="stylesheet" href="blog.css">
+
+  <!-- Your blog data + future scripts -->
+  <script src="blog.js" defer></script>
+</head>
+<body>
+
+  <!--————————————————————————————
+    Header with skip-link, title & nav
+  —————————————————————————————-->
+  <header>
+    <div class="skiptocontent">
+      <a href="#maincontent">Skip to main content</a>
+    </div>
+
+    <h1>Kids Read For Fun</h1>
+
+    <nav>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Archive</a></li>
+        <li><a href="#">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--————————————————————————————
+    Main layout: articles on left, filters on right
+  —————————————————————————————-->
+  <main id="maincontent">
+    <article>
+      <div class="meta">
+        <p class="date">July 5, 2022</p>
+        <p class="age">10-14</p>
+        <p class="genre">Fantasy</p>
+        <p class="rating">★★★★</p>
+      </div>
+      <div class="content">
+        <h2>Septimus Heap Book One: Magyk</h2>
+        <img
+          src="magyk.jpg"
+          alt="Cover of Septimus Heap Book One: Magyk"
+        >
+        <p>
+          If you enjoy stories about seventh sons of seventh sons and
+          magyk this is the book for you.
+          <a href="#">Read More…</a>
+        </p>
+      </div>
+    </article>
+
+    <!-- more <article>…</article> here -->
+
+    <aside>
+      <p>Filter form will go here</p>
+    </aside>
+  </main>
+
+</body>
+</html>

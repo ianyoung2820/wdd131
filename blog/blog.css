@@ -1,0 +1,131 @@
+/*————————————————————————————
+  1) Color + font setup
+————————————————————————————*/
+:root {
+  --gold: #EFC69B;
+  --red:  #AF1B3F;
+  --dark: #473144;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+h1, h2 {
+  font-family: 'Lora', serif;
+  color: var(--red);
+  margin: 0;
+}
+
+/*————————————————————————————
+  2) Skip-to-content link
+————————————————————————————*/
+.skiptocontent a {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--gold);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+.skiptocontent a:focus {
+  top: 0;
+}
+
+/*————————————————————————————
+  3) Header & Nav styling
+————————————————————————————*/
+header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--gold);
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+nav {
+  border-top: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding: 0.75rem 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 2rem;
+  justify-content: end;
+  justify-items: end;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--dark);
+}
+nav a:hover {
+  color: var(--red);
+}
+
+/*————————————————————————————
+  4) Main layout grid
+————————————————————————————*/
+main {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/*————————————————————————————
+  5) Article layout grid
+————————————————————————————*/
+article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5rem;
+  border-bottom: 1px solid var(--gold);
+  padding: 2rem 0;
+}
+
+article .meta p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+
+article .meta .date {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+article .meta .rating {
+  color: var(--gold);
+}
+
+article .content h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+
+article .content img {
+  display: block;
+  max-width: 100%;
+  margin: 1rem 0;
+}
+
+article .content p {
+  margin-bottom: 0;
+}
