@@ -2,43 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width,initial-scale=1.0"
-  >
-  <meta
-    name="description"
-    content="Kids Read For Fun – a blog of children's book reviews."
-  >
-  <meta name="author" content="Ian Young">
-  <title>Kids Read For Fun</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kids Read For Fun: thoughtful reviews of children’s books by age, genre, and rating.">
+  <meta name="author" content="Your Name">
+  <title>Kids Read For Fun – Book Reviews</title>
 
-  <!-- Google Font for headings -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
-    rel="stylesheet"
-  >
-
-  <!-- Your blog stylesheet -->
+  <!-- Link to your CSS -->
   <link rel="stylesheet" href="blog.css">
 
-  <!-- Your blog data + future scripts -->
+  <!-- Link to your JS (deferred so DOM is ready) -->
   <script src="blog.js" defer></script>
 </head>
 <body>
-
-  <!--————————————————————————————
-    Header with skip-link, title & nav
-  —————————————————————————————-->
   <header>
+    <!-- 1. Skip‐to‐content link -->
     <div class="skiptocontent">
       <a href="#maincontent">Skip to main content</a>
     </div>
 
+    <!-- 2. Site Title -->
     <h1>Kids Read For Fun</h1>
 
+    <!-- 3. Navigation -->
     <nav>
       <ul>
+        <li><a href="../">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Archive</a></li>
         <li><a href="#">Search</a></li>
@@ -46,37 +34,19 @@
     </nav>
   </header>
 
-  <!--————————————————————————————
-    Main layout: articles on left, filters on right
-  —————————————————————————————-->
-  <main id="maincontent">
-    <article>
-      <div class="meta">
-        <p class="date">July 5, 2022</p>
-        <p class="age">10-14</p>
-        <p class="genre">Fantasy</p>
-        <p class="rating">★★★★</p>
-      </div>
-      <div class="content">
-        <h2>Septimus Heap Book One: Magyk</h2>
-        <img
-          src="magyk.jpg"
-          alt="Cover of Septimus Heap Book One: Magyk"
-        >
-        <p>
-          If you enjoy stories about seventh sons of seventh sons and
-          magyk this is the book for you.
-          <a href="#">Read More…</a>
-        </p>
-      </div>
-    </article>
+  <!-- 4. WRAPPER for two‐column layout -->
+  <div class="layout">
+    <!-- 5. Main content area (articles will be injected here) -->
+    <main id="maincontent">
+      <!-- No hard‐coded <article> tags here anymore! -->
+    </main>
 
-    <!-- more <article>…</article> here -->
-
-    <aside>
+    <!-- 6. Sidebar placeholder -->
+    <aside class="filters">
       <p>Filter form will go here</p>
     </aside>
-  </main>
+  </div>
 
+  <!-- 7. (blog.js is already deferred in the <head>) -->
 </body>
 </html>

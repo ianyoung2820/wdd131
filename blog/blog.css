@@ -1,131 +1,156 @@
-/*————————————————————————————
-  1) Color + font setup
-————————————————————————————*/
+/* === VARIABLES & BASE RESET === */
 :root {
-  --gold: #EFC69B;
-  --red:  #AF1B3F;
-  --dark: #473144;
+  --gold:    #EFC69B;
+  --red:     #AF1B3F;
+  --dark:    #473144;
+  --body:    Helvetica, Arial, sans-serif;
+  --header:  'Lora', serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: var(--body);
   color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-h1, h2 {
-  font-family: 'Lora', serif;
-  color: var(--red);
-  margin: 0;
-}
-
-/*————————————————————————————
-  2) Skip-to-content link
-————————————————————————————*/
+/* === “Skip to Content” LINK === */
 .skiptocontent a {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--gold);
+  background: var(--red);
   color: #fff;
   padding: 0.5rem 1rem;
   text-decoration: none;
+  transition: top 0.2s ease-in-out;
   z-index: 1000;
 }
 .skiptocontent a:focus {
   top: 0;
 }
 
-/*————————————————————————————
-  3) Header & Nav styling
-————————————————————————————*/
+/* === HEADER & NAV === */
 header {
-  text-align: center;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1rem;
 }
 
 header h1 {
+  font-family: var(--header);
   font-size: 2.5rem;
-}
-
-nav {
-  border-top: 1px solid var(--gold);
-  border-bottom: 1px solid var(--gold);
-  padding: 0.75rem 0;
+  text-align: center;
+  margin: 0;
+  padding: 1.5rem 0 1rem;
+  color: var(--dark);
 }
 
 nav ul {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
 
   display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 2rem;
+  grid-template-columns: repeat(4, auto);
   justify-content: end;
-  justify-items: end;
+  align-items: center;
+  gap: 2rem;
+
+  border-top:    1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding:       0.75rem 0;
+  max-width:     600px;
+  margin:        0 auto;
 }
 
 nav a {
   text-decoration: none;
-  font-size: 1rem;
+  font-size:       1.1rem;
+  color:           var(--red);
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === TWO‐COLUMN LAYOUT FOR CONTENT + SIDEBAR === */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* === MAIN CONTENT === */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* space between each article */
+}
+
+/* === SIDEBAR PLACEHOLDER === */
+.filters {
+  border: 1px dashed var(--gold);
+  padding: 1rem;
+}
+
+/* === ARTICLE REVIEW GRID === */
+.review {
+  display: grid;
+  grid-template-columns: 150px 1fr; /* meta on left, content on right */
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* LEFT SIDE (metadata) */
+.review-meta {
+  font-size: 0.9rem;
+  line-height: 1.4;
   color: var(--dark);
 }
-nav a:hover {
+
+.review-meta time {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.review-meta p {
+  margin: 0.3rem 0;
+}
+
+/* RIGHT SIDE (title, image, description) */
+.review-content h2 {
+  font-family: var(--header);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
   color: var(--red);
 }
 
-/*————————————————————————————
-  4) Main layout grid
-————————————————————————————*/
-main {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+.review-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.75rem;
 }
 
-/*————————————————————————————
-  5) Article layout grid
-————————————————————————————*/
-article {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 1.5rem;
-  border-bottom: 1px solid var(--gold);
-  padding: 2rem 0;
-}
-
-article .meta p {
-  margin: 0.25rem 0;
+.review-content p {
+  margin-top: 0;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
-article .meta .date {
-  font-size: 1.25rem;
+.review-content p a {
+  color: var(--red);
+  text-decoration: none;
   font-weight: bold;
 }
 
-article .meta .rating {
-  color: var(--gold);
-}
-
-article .content h2 {
-  margin-top: 0;
-  font-size: 1.75rem;
-}
-
-article .content img {
-  display: block;
-  max-width: 100%;
-  margin: 1rem 0;
-}
-
-article .content p {
-  margin-bottom: 0;
+.review-content p a:hover {
+  text-decoration: underline;
 }
