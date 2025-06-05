@@ -1,0 +1,104 @@
+/* form-demo.css */
+
+/* 1) Centered container with a max‐width to mimic the screenshot’s form width */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;       /* roughly the width in your screenshot */
+  margin: 40px auto;      /* vertical spacing and centered horizontally */
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 2rem;         /* a bit larger for the heading */
+  margin-bottom: 24px;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* 2) The form itself */
+form {
+  width: 100%;
+}
+
+/* Each “group” (label + input + error) */
+.form-group {
+  margin-bottom: 20px;     /* space between fields */
+}
+
+/* Make every label bold */
+.form-group > label {
+  display: block;
+  margin-bottom: 6px;     /* small gap between label and input */
+  font-size: 1rem;
+  color: #555555;
+  font-weight: bold;      /* <-- added this line to make labels bold */
+}
+
+/* Input / Textarea / Select styling to match screenshot */
+.form-group > input,
+.form-group > textarea,
+.form-group > select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;           /* a bit of padding for a more “filled” look */
+  font-size: 1rem;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #ced4da;    /* subtle gray border */
+  border-radius: 4px;           /* slight rounding of corners */
+  transition: border-color 0.2s;
+}
+
+.form-group > input:focus,
+.form-group > textarea:focus,
+.form-group > select:focus {
+  outline: none;
+  border-color: #80bdff;        /* highlight color on focus */
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+/* Error‐message text below each field */
+.error-message {
+  color: #d9534f;        /* a bootstrap‐like red */
+  font-size: 0.875rem;   /* slightly smaller text */
+  margin-top: 4px;
+}
+
+/* Hide any conditional section via this class */
+.hidden {
+  display: none;
+}
+
+/* 3) Green “Place Order” button */
+button {
+  background-color: #28a745;  /* bootstrap “success” green */
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+button:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(40,167,69,0.5);
+}
+
+button:disabled {
+  background-color: #94d3a2;
+  border-color: #94d3a2;
+  cursor: not-allowed;
+}
