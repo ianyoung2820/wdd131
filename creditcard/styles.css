@@ -1,0 +1,150 @@
+:root {
+  --card-width: 360px;       /* front & back card width */
+  --card-height: 220px;      /* front & back card height */
+  --offset-x: 140px;          /* how far back‐card peeks to the right */
+  --offset-y: 80px;          /* how far back‐card peeks downward */
+  --padding: 20px;           /* inner padding on front/back */
+  --strip-height: 40px;      /* height of the magnetic strip */
+  --gap: 16px;               /* general gap between elements */
+}
+
+/* ─── CONTAINER ─── */
+.card-container {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: 2rem auto;
+  overflow: visible;
+}
+
+/* ─── BACK OF CARD ─── */
+.card-back {
+  position: absolute;
+  top: var(--offset-y);
+  left: var(--offset-x);
+  width: var(--card-width);
+  height: var(--card-height);
+  background: #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: var(--padding);
+  box-sizing: border-box;
+  z-index: 1;
+}
+.magnetic-strip {
+  position: absolute;
+  top: var(--padding);
+  left: 0;
+  right: 0;
+  height: var(--strip-height);
+  background: #333;
+  border-radius: 0px;
+  z-index: 2;
+}
+.cvv {
+  position: absolute;
+  bottom: var(--padding);
+  right: var(--padding);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+.cvv label {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.cvv input {
+  width: 48px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* ─── FRONT OF CARD ─── */
+.card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--card-width);
+  height: var(--card-height);
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: var(--padding);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 3;
+}
+
+/* TOTAL text */
+.card-front .total {
+  font-family: monospace;
+  font-weight: bold;
+  margin: 0 0 var(--gap);
+}
+
+/* Card icon */
+.card-icon {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding);
+  width: 40px;
+}
+
+/* Labels & Inputs */
+.card-front label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.card-front input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: var(--gap);
+}
+
+/* ─── HOLDER + EXPIRATION ROW ─── */
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin-top: var(--gap);
+}
+.card-holder-col {
+  flex: 1;
+}
+.expire-col {
+  flex: 1;
+}
+.expire-col label {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.expire-col input {
+  width: 48px;
+  padding: 8px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+.card-holder-col input {
+  width: 140px;    
+  max-width: 100%; 
+}
+
+/* ─── SUBMIT BUTTON ─── */
+form button {
+  display: block;
+  margin: 6rem 54rem 0;
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+form button:hover {
+  background: #eee;
+}
