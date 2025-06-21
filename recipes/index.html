@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Find and share amazing recipes—from breakfasts and desserts to mains—on RecipeBook.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="RecipeBook – Delicious Recipes for Every Occasion">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Explore tasty, easy-to-follow recipes and discover your next favorite dish on RecipeBook.">
+  <meta property="og:image" content="https://yourdomain.com/images/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com/recipes/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RecipeBook – Delicious Recipes for Every Occasion">
+  <meta name="twitter:description" content="Explore tasty, easy-to-follow recipes and discover your next favorite dish on RecipeBook.">
+  <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg">
+
+ 
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="recipes.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <img src="images/images/recipe-book.png" alt="Recipe Book logo">
+    <h1>RecipeBook</h1>
+  </header>
+
+  <!-- SEARCH FORM -->
+  <form class="search-form" role="search" action="#" method="get">
+    <label for="search-input" class="visually-hidden">Find a recipe</label>
+    <input
+      type="search"
+      id="search-input"
+      name="q"
+      placeholder="Find a recipe"
+      autocomplete="off"
+    >
+    <button type="submit" aria-label="Search">
+      <span class="icon-search" aria-hidden="true">🔍</span>
+    </button>
+  </form>
+
+  <hr>
+
+  <!-- MAIN CONTENT: ONE RECIPE CARD -->
+  <main>
+    <article class="recipe-card">
+
+      <!-- recipe image -->
+      <img
+        src="images/images/apple-crisp.jpg"
+        alt="A bowl of apple crisp topped with vanilla ice cream"
+      >
+
+      <!-- recipe tags -->
+      <div class="tags">
+        <button type="button" class="tag">dessert</button>
+        <!-- add more tags here as needed -->
+      </div>
+
+      <!-- recipe title -->
+      <h2 class="recipe-title">Apple Crisp</h2>
+
+      <!-- accessible star rating -->
+      <span
+        class="rating"
+        role="img"
+        aria-label="Rating: 4 out of 5 stars"
+      >
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star">⭐</span>
+        <span aria-hidden="true" class="icon-star-empty">☆</span>
+      </span>
+
+      <!-- (optional) recipe description -->
+      <p class="recipe-description">
+        This apple crisp recipe is a simple yet delicious fall dessert that’s great served warm with vanilla ice cream.
+      </p>
+
+    </article>
+  </main>
+
+  <hr>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <p class="attribution">
+      <a
+        href="https://www.flaticon.com/free-icons/recipe"
+        title="recipe icons"
+        target="_blank"
+        rel="noopener"
+      >
+        Recipe icons created by Freepik – Flaticon
+      </a>
+    </p>
+
+    <div class="social">
+      <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
+      <a href="#"><img src="images/images/instagram_icon.svg" alt="Instagram icon"></a>
+      <a href="#"><img src="images/images/youtube_icon.svg" alt="YouTube icon"></a>
+      <a href="#"><img src="images/images/pinterest_icon.svg" alt="Pinterest icon"></a>
+    </div>
+  </footer>
+
+  <!-- Your JS entry point -->
+  <script type="module" src="main.js"></script>
+</body>
+</html>
