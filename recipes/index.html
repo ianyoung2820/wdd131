@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Find and share amazing recipes—from breakfasts and desserts to mains—on RecipeBook.">
+  <meta name="description" content="Find and share amazing recipes—from breakfasts and desserts to mains—on RecipeBook.">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="RecipeBook – Delicious Recipes for Every Occasion">
@@ -18,7 +18,6 @@
   <meta name="twitter:description" content="Explore tasty, easy-to-follow recipes and discover your next favorite dish on RecipeBook.">
   <meta name="twitter:image" content="https://yourdomain.com/images/og-image.jpg">
 
- 
   <title>Recipe Book</title>
   <link rel="stylesheet" href="recipes.css">
 </head>
@@ -26,7 +25,8 @@
 
   <!-- SITE HEADER -->
   <header class="site-header">
-    <img src="images/images/recipe-book.png" alt="Recipe Book logo">
+    <!-- was images/images/recipe-book.png -->
+    <img src="images/recipe-book.png" alt="Recipe Book logo">
     <h1>RecipeBook</h1>
   </header>
 
@@ -50,23 +50,18 @@
   <!-- MAIN CONTENT: ONE RECIPE CARD -->
   <main>
     <article class="recipe-card">
-
-      <!-- recipe image -->
+      <!-- was images/images/apple-crisp.jpg -->
       <img
-        src="images/images/apple-crisp.jpg"
+        src="images/apple-crisp.jpg"
         alt="A bowl of apple crisp topped with vanilla ice cream"
       >
 
-      <!-- recipe tags -->
       <div class="tags">
         <button type="button" class="tag">dessert</button>
-        <!-- add more tags here as needed -->
       </div>
 
-      <!-- recipe title -->
       <h2 class="recipe-title">Apple Crisp</h2>
 
-      <!-- accessible star rating -->
       <span
         class="rating"
         role="img"
@@ -79,11 +74,9 @@
         <span aria-hidden="true" class="icon-star-empty">☆</span>
       </span>
 
-      <!-- (optional) recipe description -->
       <p class="recipe-description">
         This apple crisp recipe is a simple yet delicious fall dessert that’s great served warm with vanilla ice cream.
       </p>
-
     </article>
   </main>
 
@@ -103,14 +96,13 @@
     </p>
 
     <div class="social">
-      <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates -->
-      <a href="#"><img src="images/images/instagram_icon.svg" alt="Instagram icon"></a>
-      <a href="#"><img src="images/images/youtube_icon.svg" alt="YouTube icon"></a>
-      <a href="#"><img src="images/images/pinterest_icon.svg" alt="Pinterest icon"></a>
+      <!-- was images/images/... -->
+      <a href="#"><img src="images/instagram_icon.svg" alt="Instagram icon"></a>
+      <a href="#"><img src="images/youtube_icon.svg" alt="YouTube icon"></a>
+      <a href="#"><img src="images/pinterest_icon.svg" alt="Pinterest icon"></a>
     </div>
   </footer>
 
-  <!-- Your JS entry point -->
   <script type="module" src="main.js"></script>
 </body>
 </html>

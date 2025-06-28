@@ -5,7 +5,6 @@ import recipes from './recipes.mjs';
 function random(max) {
   return Math.floor(Math.random() * max);
 }
-
 function getRandomListEntry(list) {
   return list[random(list.length)];
 }
@@ -21,15 +20,11 @@ function ratingTemplate(rating) {
   let html = `
     <span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">
   `;
-
   for (let i = 1; i <= 5; i++) {
-    if (i <= rating) {
-      html += `<span aria-hidden="true" class="icon-star">⭐</span>`;
-    } else {
-      html += `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
-    }
+    html += i <= rating
+      ? `<span aria-hidden="true" class="icon-star">⭐</span>`
+      : `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
   }
-
   html += `</span>`;
   return html;
 }
@@ -37,7 +32,7 @@ function ratingTemplate(rating) {
 function recipeTemplate(recipe) {
   return `
     <article class="recipe-card">
-      <img src="${recipe.image}" alt="${recipe.alt}">
+      <img src="${recipe.image}" alt="${recipe.name}">
 
       <div class="tags">
         ${tagsTemplate(recipe.tags)}
@@ -69,13 +64,13 @@ init();
 // 05. Filtering via search
 function filterRecipes(query) {
   const lower = query.toLowerCase();
-
   return recipes
     .filter(recipe => {
       const inName = recipe.name.toLowerCase().includes(lower);
       const inDesc = recipe.description.toLowerCase().includes(lower);
       const inTags = recipe.tags.some(t => t.toLowerCase().includes(lower));
-      const inIngredients = recipe.ingredients.some(i =>
+      // use the correct field name here:
+      const inIngredients = recipe.recipeIngredient.some(i =>
         i.toLowerCase().includes(lower)
       );
       return inName || inDesc || inTags || inIngredients;
