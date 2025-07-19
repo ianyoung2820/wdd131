@@ -1,8 +1,11 @@
 /*------------------------------------
-  Variables & Reset
+  Import Fonts
 ------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap");
 
+/*------------------------------------
+  CSS Variables
+------------------------------------*/
 :root {
   /* Primary palette */
   --primary-color:   #2E3B4E;   /* Deep slate blue */
@@ -15,44 +18,38 @@
   --heading-font:   "IM Fell French Canon SC", serif;
   --paragraph-font: Lato, Helvetica, sans-serif;
 
-  /* Text on light/dark */
-  --headline-on-light:  var(--primary-color);
-  --headline-on-dark:   white;
-  --text-on-light:      var(--primary-color);
-  --text-on-dark:       white;
-
-  /* Panels */
-  --panel-bg-dark:   var(--primary-color);
-  --panel-text-dark: var(--headline-on-dark);
+  /* Text colors */
+  --text-dark:      #2E3B4E;    /* for body text on light bg */
+  --text-light:     white;      /* for text on dark bg */
 
   /* Navigation */
-  --nav-link:       var(--primary-color);
-  --nav-hover-text: var(--headline-on-dark);
+  --nav-bg:         var(--primary-color);
+  --nav-text:       var(--text-light);
   --nav-hover-bg:   var(--primary-color);
+  --nav-hover-text: var(--text-light);
 }
 
+/*------------------------------------
+  Global Resets & Base
+------------------------------------*/
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/*------------------------------------
-  Base Styles
-------------------------------------*/
 body {
   font-family: var(--paragraph-font);
-  color: var(--text-on-light);
+  color: var(--text-dark);
   background-color: var(--accent2-color);
   max-width: 1200px;
   margin: 0 auto;
   line-height: 1.5;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
-  color: var(--headline-on-light);
+  color: var(--text-dark);
 }
 
 /*------------------------------------
@@ -62,8 +59,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--panel-bg-dark);
-  color: var(--panel-text-dark);
+  background-color: var(--nav-bg);
   padding: 1rem;
 }
 
@@ -74,35 +70,37 @@ header .logo img {
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: var(--nav-link);
+  color: var(--nav-text);
   padding: 0.25rem 0.5rem;
 }
 
 nav a.active,
 nav a:hover {
-  color: var(--nav-hover-text);
   background-color: var(--nav-hover-bg);
+  color: var(--nav-hover-text);
   border-radius: 4px;
 }
 
 /*------------------------------------
-  Hero Section
+  Hero Sections (Home & Library)
 ------------------------------------*/
-.hero {
+.hero,
+.library-hero {
+  background-color: var(--primary-color);
+  color: var(--text-light);
   text-align: center;
   padding: 2rem;
-  background-color: var(--primary-color);
-  color: var(--panel-text-dark);
 }
 
-.hero h1 {
+.hero h1,
+.library-hero h1 {
+  color: var(--text-light) !important;
   margin-bottom: 0.5rem;
 }
 
-.hero p {
-  margin-bottom: 1rem;
-}
-
+/*------------------------------------
+  Hero Button
+------------------------------------*/
 .hero button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -114,71 +112,73 @@ nav a:hover {
 
 .hero button:hover {
   background-color: var(--primary-color);
-  color: var(--panel-text-dark);
+  color: var(--text-light);
 }
 
 /*------------------------------------
-  Stats Panel
+  Stats Panel (Home)
 ------------------------------------*/
 .stats {
   display: flex;
   justify-content: space-around;
   padding: 1rem;
   background-color: var(--secondary-color);
-  color: var(--panel-text-dark);
+  color: var(--text-light);
   font-weight: bold;
 }
 
 /*------------------------------------
-  Preview & Library List
+  Preview List (Home)
 ------------------------------------*/
-.preview,
-.library-list {
+.preview {
   padding: 1rem;
 }
 
-.preview ul,
-.library-list ul {
+.preview ul {
   list-style: none;
 }
 
 .preview li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
+  color: var(--text-dark);
 }
 
 /*------------------------------------
-  Quest Library Header & Filters
+  Quest Library Filters & List
 ------------------------------------*/
-.library-hero {
-  text-align: center;
-  padding: 1rem;
-}
-
-.filters {
+.library-hero .filters {
   margin-top: 0.5rem;
 }
 
 .filters button {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-color);
   background: transparent;
   cursor: pointer;
 }
 
 .filters button.active {
-  background-color: var(--primary-color);
-  color: var(--panel-text-dark);
+  background-color: var(--secondary-color);
+  color: var(--text-light);
 }
 
-/* Quest List Items */
+.library-list {
+  padding: 1rem;
+}
+
+.library-list ul {
+  list-style: none;
+}
+
 .library-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem;
   border-bottom: 1px solid #ccc;
+  color: var(--text-dark);
 }
 
 .library-list span.overdue {
@@ -197,7 +197,7 @@ footer {
   text-align: center;
   padding: 1rem;
   background-color: var(--accent2-color);
-  color: var(--text-on-light);
+  color: var(--text-dark);
 }
 
 /*------------------------------------

@@ -1,3 +1,4 @@
+// js/data.js
 export const STORAGE_KEY = 'eternalQuestGoals';
 
 export function getGoals() {

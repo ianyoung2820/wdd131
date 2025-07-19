@@ -1,3 +1,4 @@
+// js/goal.js
 export default class Goal {
   constructor(title, dueDate, points, id = Date.now(), completed = false) {
     this.id = id;

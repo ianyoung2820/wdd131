@@ -1,12 +1,17 @@
-import { getGoals }         from './data.js';
-import { renderStats, renderPreview, setupForm,
-         renderLibrary, setupFilters }
-         from './ui.js';
+// js/main.js
+import { getGoals } from './data.js';
+import {
+  renderStats,
+  renderPreview,
+  setupForm,
+  renderLibrary,
+  setupFilters
+} from './ui.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const goals = getGoals();
 
-  // Home page
+  // Home page widgets (no-ops on library.html)
   renderStats(goals);
   renderPreview(goals);
   setupForm(goals);
