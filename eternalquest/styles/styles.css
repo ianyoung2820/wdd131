@@ -1,11 +1,11 @@
-/*------------------------------------
+/*
   Import Google Fonts
-------------------------------------*/
+*/
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap");
 
-/*------------------------------------
+/*
   CSS Variables
-------------------------------------*/
+*/
 :root {
   /* Palette */
   --primary-color:   #2E3B4E;   /* Deep slate blue */
@@ -22,9 +22,9 @@
   --text-light: #FFFFFF;  /* for text on dark bg */
 }
 
-/*------------------------------------
+/*
   Reset & Base Styles
-------------------------------------*/
+*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,9 +40,9 @@ body {
   line-height: 1.5;
 }
 
-/*------------------------------------
+/*
   Header & Navigation
-------------------------------------*/
+*/
 header {
   display: flex;
   align-items: center;
@@ -78,9 +78,9 @@ header nav a.active {
   border-radius: 4px;
 }
 
-/*------------------------------------
+/*
   Hero & Library Hero Sections
-------------------------------------*/
+*/
 section.hero,
 section.library-hero {
   background-color: var(--primary-color) !important;
@@ -116,9 +116,9 @@ section.hero button:hover {
   background-color: var(--primary-color);
 }
 
-/*------------------------------------
+/*
   Stats Panel (Home)
-------------------------------------*/
+*/
 section.stats {
   display: flex;
   justify-content: space-around;
@@ -128,9 +128,9 @@ section.stats {
   font-weight: bold;
 }
 
-/*------------------------------------
+/*
   Preview List (Home)
-------------------------------------*/
+*/
 section.preview {
   padding: 1rem;
 }
@@ -145,9 +145,9 @@ section.preview li {
   color: var(--text-dark);
 }
 
-/*------------------------------------
+/*
   Quest Library Filters & List
-------------------------------------*/
+*/
 section.library-hero .filters {
   margin-top: 0.5rem;
 }
@@ -193,9 +193,9 @@ section.library-list span.completed {
   opacity: 0.6;
 }
 
-/*------------------------------------
+/*
   Footer
-------------------------------------*/
+*/
 footer {
   text-align: center;
   padding: 1rem;
@@ -203,9 +203,9 @@ footer {
   color: var(--text-dark);
 }
 
-/*------------------------------------
+/*
   Modal Form
-------------------------------------*/
+*/
 .modal {
   position: fixed;
   top: 0;
