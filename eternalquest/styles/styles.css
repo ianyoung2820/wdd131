@@ -249,3 +249,30 @@ footer {
   width: 100%;
   margin-bottom: 0.75rem;
 }
+/* ──────────────────────────────────────────────────
+   MAKE HERO & LIBRARY TITLES VISIBLE ON DARK BG
+────────────────────────────────────────────────── */
+.hero h1,
+.library-hero h1 {
+  color: #FFFFFF !important;   /* force white */
+}
+
+/* ──────────────────────────────────────────────────
+   MAKE NAV LINKS VISIBLE ON DARK HEADER
+────────────────────────────────────────────────── */
+header nav a,
+header nav a:link,
+header nav a:visited {
+  color: #FFFFFF !important;   /* force white */
+}
+
+/* ──────────────────────────────────────────────────
+   OPTIONAL: Ensure sub‑page links in body are dark on cream
+────────────────────────────────────────────────── */
+a {
+  color: #2E3B4E;              /* your text‑dark */
+}
+
+a:hover {
+  color: #D9B44A;              /* your secondary accent */
+}
