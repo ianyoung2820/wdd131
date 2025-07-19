@@ -1,4 +1,3 @@
-/* register.css */
 * {
   box-sizing: border-box;
 }
@@ -29,6 +28,24 @@ form {
 fieldset {
   margin-bottom: 2em;
 }
+
+/* ===== PARTICIPANTS GRID ===== */
+#participantsFieldset {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  #participantsFieldset {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* keep the Add button on its own bottom row */
+  #add {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+/* ============================= */
+
 input, select, textarea {
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -83,7 +100,7 @@ input:hover::placeholder {
     width: 100%;
   }
 }
-/* Style custom radio buttons */
+/* custom radio buttons */
 input[type="radio"] {
   display: none;
 }
@@ -128,7 +145,6 @@ label.radio:after {
 input[type="radio"]:checked + label:after {
   opacity: 1;
 }
-/* Button styling */
 .btn-block {
   margin-top: 10px;
   text-align: center;
@@ -146,7 +162,7 @@ button {
 button:hover {
   background: #00b33c;
 }
-/* Utility to hide elements */
+/* utility to hide elements */
 .hide {
   display: none;
 }

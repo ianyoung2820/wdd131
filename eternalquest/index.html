@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eternal Quest</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/Sword and Shield.png" alt="Eternal Quest logo">
+    </div>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="library.html">Quest Library</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Turn Your Goals into Quests</h1>
+      <p>Stay motivated by earning points and badges for each quest you complete.</p>
+      <!-- Note: This ID must match your JS selector exactly -->
+      <button id="openFormBtn">Add Your First Quest</button>
+    </section>
+
+    <section class="stats">
+      <div><strong>Quests Completed:</strong> <span id="completedCount">0</span></div>
+      <div><strong>Total Points:</strong> <span id="totalPoints">0</span></div>
+    </section>
+
+    <section class="preview">
+      <h2>Recent Quests</h2>
+      <ul id="previewList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eternal Quest</p>
+  </footer>
+
+  <!-- Modal needs to be in the DOM so our script can find it -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Add New Quest</h2>
+      <form id="questForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required>
+
+        <label for="dueDate">Due Date:</label>
+        <input type="date" id="dueDate" required>
+
+        <label for="points">Points:</label>
+        <input type="number" id="points" min="1" value="1" required>
+
+        <button type="submit">Add Quest</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Your script must come **after** all of the above so it can hook the elements -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

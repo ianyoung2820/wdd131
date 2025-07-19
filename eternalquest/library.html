@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quest Library – Eternal Quest</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/Sword and Shield.png" alt="Eternal Quest logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="library.html" class="active">Quest Library</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="library-hero">
+      <h1>Quest Library</h1>
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="active">Active</button>
+        <button data-filter="completed">Completed</button>
+      </div>
+    </section>
+
+    <section class="library-list">
+      <ul id="questList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Eternal Quest</p>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

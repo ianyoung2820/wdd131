@@ -1,4 +1,3 @@
-// Templates.js
 
 /**
  * Returns the HTML string for a participant section,

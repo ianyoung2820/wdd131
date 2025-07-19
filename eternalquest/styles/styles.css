@@ -1,0 +1,245 @@
+/*------------------------------------
+  Variables & Reset
+------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap");
+
+:root {
+  /* Primary palette */
+  --primary-color:   #2E3B4E;   /* Deep slate blue */
+  --secondary-color: #D9B44A;   /* Warm gold */
+  --accent1-color:   #A66F3E;   /* Burnt sienna */
+  --accent2-color:   #F4F1DE;   /* Cream background */
+  --highlight-color: #A3C4BC;   /* Soft teal */
+
+  /* Typography */
+  --heading-font:   "IM Fell French Canon SC", serif;
+  --paragraph-font: Lato, Helvetica, sans-serif;
+
+  /* Text on light/dark */
+  --headline-on-light:  var(--primary-color);
+  --headline-on-dark:   white;
+  --text-on-light:      var(--primary-color);
+  --text-on-dark:       white;
+
+  /* Panels */
+  --panel-bg-dark:   var(--primary-color);
+  --panel-text-dark: var(--headline-on-dark);
+
+  /* Navigation */
+  --nav-link:       var(--primary-color);
+  --nav-hover-text: var(--headline-on-dark);
+  --nav-hover-bg:   var(--primary-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------------------
+  Base Styles
+------------------------------------*/
+body {
+  font-family: var(--paragraph-font);
+  color: var(--text-on-light);
+  background-color: var(--accent2-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  color: var(--headline-on-light);
+}
+
+/*------------------------------------
+  Header & Navigation
+------------------------------------*/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--panel-bg-dark);
+  color: var(--panel-text-dark);
+  padding: 1rem;
+}
+
+header .logo img {
+  height: 40px;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--nav-link);
+  padding: 0.25rem 0.5rem;
+}
+
+nav a.active,
+nav a:hover {
+  color: var(--nav-hover-text);
+  background-color: var(--nav-hover-bg);
+  border-radius: 4px;
+}
+
+/*------------------------------------
+  Hero Section
+------------------------------------*/
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--primary-color);
+  color: var(--panel-text-dark);
+}
+
+.hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  margin-bottom: 1rem;
+}
+
+.hero button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: var(--primary-color);
+  color: var(--panel-text-dark);
+}
+
+/*------------------------------------
+  Stats Panel
+------------------------------------*/
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: var(--secondary-color);
+  color: var(--panel-text-dark);
+  font-weight: bold;
+}
+
+/*------------------------------------
+  Preview & Library List
+------------------------------------*/
+.preview,
+.library-list {
+  padding: 1rem;
+}
+
+.preview ul,
+.library-list ul {
+  list-style: none;
+}
+
+.preview li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/*------------------------------------
+  Quest Library Header & Filters
+------------------------------------*/
+.library-hero {
+  text-align: center;
+  padding: 1rem;
+}
+
+.filters {
+  margin-top: 0.5rem;
+}
+
+.filters button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background-color: var(--primary-color);
+  color: var(--panel-text-dark);
+}
+
+/* Quest List Items */
+.library-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.library-list span.overdue {
+  color: var(--accent1-color);
+}
+
+.library-list span.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/*------------------------------------
+  Footer
+------------------------------------*/
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--accent2-color);
+  color: var(--text-on-light);
+}
+
+/*------------------------------------
+  Modal Form
+------------------------------------*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.modal-content form label,
+.modal-content form input,
+.modal-content form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}

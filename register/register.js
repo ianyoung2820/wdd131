@@ -1,5 +1,4 @@
-// register.js
-import { participantTemplate, successTemplate } from './Templates.js';
+import { participantTemplate, successTemplate } from './templates.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   let participantCount = 1;
@@ -7,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const form      = document.getElementById('registrationForm');
   const summaryEl = document.getElementById('summary');
 
+  // hide until after submit
   summaryEl.style.display = 'none';
 
   // Add Participant
