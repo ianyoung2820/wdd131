@@ -40,16 +40,9 @@ body {
   line-height: 1.5;
 }
 
-/* Ensure all headings default dark */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  color: var(--text-dark);
-}
-
 /*------------------------------------
   Header & Navigation
 ------------------------------------*/
-/* Header background is primary */
 header {
   display: flex;
   align-items: center;
@@ -58,18 +51,17 @@ header {
   padding: 1rem;
 }
 
-/* Logo sizing */
+header h1,
+header h2 {
+  font-family: var(--heading-font);
+  color: var(--text-light) !important;
+}
+
 header .logo img {
   height: 40px;
 }
 
-/* Force header titles white */
-header h1,
-header h2 {
-  color: var(--text-light) !important;
-}
-
-/* Nav links forced white and visible */
+/* Nav links */
 header nav a,
 header nav a:link,
 header nav a:visited {
@@ -79,7 +71,6 @@ header nav a:visited {
   padding: 0.25rem 0.5rem;
 }
 
-/* Nav hover/active state */
 header nav a:hover,
 header nav a.active {
   background-color: var(--secondary-color) !important;
@@ -88,43 +79,47 @@ header nav a.active {
 }
 
 /*------------------------------------
-  Hero Sections (Home & Library)
+  Hero & Library Hero Sections
 ------------------------------------*/
-/* Hero and library-hero share this */
-.hero,
-.library-hero {
+section.hero,
+section.library-hero {
   background-color: var(--primary-color) !important;
   color: var(--text-light) !important;
   text-align: center;
   padding: 2rem;
 }
 
-/* Force their H1 white */
-.hero h1,
-.library-hero h1 {
+section.hero h1,
+section.library-hero h1 {
+  font-family: var(--heading-font);
   color: var(--text-light) !important;
   margin-bottom: 0.5rem;
 }
 
-/* Hero button styling */
-.hero button {
+section.hero p,
+section.library-hero p {
+  color: var(--text-light) !important;
+}
+
+/* Hero button */
+section.hero button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   background-color: var(--secondary-color);
+  color: var(--text-light);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-.hero button:hover {
+section.hero button:hover {
   background-color: var(--primary-color);
-  color: var(--text-light);
 }
 
 /*------------------------------------
   Stats Panel (Home)
 ------------------------------------*/
-.stats {
+section.stats {
   display: flex;
   justify-content: space-around;
   padding: 1rem;
@@ -136,15 +131,15 @@ header nav a.active {
 /*------------------------------------
   Preview List (Home)
 ------------------------------------*/
-.preview {
+section.preview {
   padding: 1rem;
 }
 
-.preview ul {
+section.preview ul {
   list-style: none;
 }
 
-.preview li {
+section.preview li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #ddd;
   color: var(--text-dark);
@@ -153,32 +148,34 @@ header nav a.active {
 /*------------------------------------
   Quest Library Filters & List
 ------------------------------------*/
-.library-hero .filters {
+section.library-hero .filters {
   margin-top: 0.5rem;
 }
 
-.filters button {
+section.library-hero .filters button {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
   border: 1px solid var(--secondary-color);
   background: transparent;
-  cursor: pointer;
-}
-
-.filters button.active {
-  background-color: var(--secondary-color);
   color: var(--text-light);
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.library-list {
+section.library-hero .filters button.active {
+  background-color: var(--secondary-color);
+}
+
+/* Library list */
+section.library-list {
   padding: 1rem;
 }
 
-.library-list ul {
+section.library-list ul {
   list-style: none;
 }
 
-.library-list li {
+section.library-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -187,11 +184,11 @@ header nav a.active {
   color: var(--text-dark);
 }
 
-.library-list span.overdue {
+section.library-list span.overdue {
   color: var(--accent1-color);
 }
 
-.library-list span.completed {
+section.library-list span.completed {
   text-decoration: line-through;
   opacity: 0.6;
 }
@@ -248,31 +245,4 @@ footer {
   display: block;
   width: 100%;
   margin-bottom: 0.75rem;
-}
-/* ──────────────────────────────────────────────────
-   MAKE HERO & LIBRARY TITLES VISIBLE ON DARK BG
-────────────────────────────────────────────────── */
-.hero h1,
-.library-hero h1 {
-  color: #FFFFFF !important;   /* force white */
-}
-
-/* ──────────────────────────────────────────────────
-   MAKE NAV LINKS VISIBLE ON DARK HEADER
-────────────────────────────────────────────────── */
-header nav a,
-header nav a:link,
-header nav a:visited {
-  color: #FFFFFF !important;   /* force white */
-}
-
-/* ──────────────────────────────────────────────────
-   OPTIONAL: Ensure sub‑page links in body are dark on cream
-────────────────────────────────────────────────── */
-a {
-  color: #2E3B4E;              /* your text‑dark */
-}
-
-a:hover {
-  color: #D9B44A;              /* your secondary accent */
 }
