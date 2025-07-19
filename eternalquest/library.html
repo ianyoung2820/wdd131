@@ -18,7 +18,6 @@
   </header>
 
   <main>
-    <!-- Hero + Filters -->
     <section class="library-hero">
       <h1>Quest Library</h1>
       <div class="filters">
@@ -28,13 +27,8 @@
       </div>
     </section>
 
-    <!-- Quest List -->
     <section class="library-list">
-      <!-- THIS ID MUST MATCH what your JS is looking for -->
       <ul id="questList"></ul>
-      <!-- If you want a “no quests” message, it could go here:
-           <p id="emptyMessage">No quests yet—go add some!</p>
-           and then hide it in JS when quests exist. -->
     </section>
   </main>
 
@@ -42,7 +36,77 @@
     <p>&copy; 2025 Eternal Quest</p>
   </footer>
 
-  <!-- Make sure this is at the bottom, with type="module" -->
-  <script type="module" src="js/main.js"></script>
+  <!-- Inline script to read from LocalStorage and render quests -->
+  <script>
+    (function() {
+      const STORAGE_KEY = 'eternalQuestGoals';
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const quests = raw ? JSON.parse(raw) : [];
+      const list = document.getElementById('questList');
+
+      // Utility to render one quest
+      function renderQuest(q) {
+        const li = document.createElement('li');
+
+        // Checkbox
+        const cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.checked = q.completed;
+        cb.addEventListener('change', () => {
+          q.completed = cb.checked;
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(quests));
+          applyFilter(currentFilter);
+        });
+
+        // Title
+        const span = document.createElement('span');
+        span.textContent = q.title;
+        if (q.completed)      span.classList.add('completed');
+        else if (new Date(q.dueDate) < new Date()) span.classList.add('overdue');
+
+        // Due date
+        const due = document.createElement('span');
+        due.textContent = 'Due: ' + new Date(q.dueDate).toLocaleDateString();
+
+        // Detail button
+        const btn = document.createElement('button');
+        btn.textContent = '>';
+        btn.addEventListener('click', () => {
+          alert(`"${q.title}" is due ${due.textContent}`);
+        });
+
+        li.append(cb, span, due, btn);
+        return li;
+      }
+
+      // Filtering
+      let currentFilter = 'all';
+      function applyFilter(filter) {
+        currentFilter = filter;
+        document.querySelectorAll('.filters button').forEach(b => {
+          b.classList.toggle('active', b.dataset.filter === filter);
+        });
+
+        list.innerHTML = '';
+        let filtered = quests;
+        if (filter === 'active')    filtered = quests.filter(q => !q.completed);
+        if (filter === 'completed') filtered = quests.filter(q => q.completed);
+
+        if (filtered.length === 0) {
+          list.innerHTML = '<li>No quests to show</li>';
+        } else {
+          filtered.forEach(q => list.append(renderQuest(q)));
+        }
+      }
+
+      // Hook up filter buttons
+      document.querySelectorAll('.filters button').forEach(btn => {
+        btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
+      });
+
+      // Initial render
+      applyFilter(currentFilter);
+    })();
+  </script>
 </body>
 </html>
