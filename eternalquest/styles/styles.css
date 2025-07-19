@@ -1,5 +1,5 @@
 /*------------------------------------
-  Import Fonts
+  Import Google Fonts
 ------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&family=Lato:wght@400;700&display=swap");
 
@@ -7,30 +7,23 @@
   CSS Variables
 ------------------------------------*/
 :root {
-  /* Primary palette */
+  /* Palette */
   --primary-color:   #2E3B4E;   /* Deep slate blue */
   --secondary-color: #D9B44A;   /* Warm gold */
   --accent1-color:   #A66F3E;   /* Burnt sienna */
   --accent2-color:   #F4F1DE;   /* Cream background */
-  --highlight-color: #A3C4BC;   /* Soft teal */
 
   /* Typography */
   --heading-font:   "IM Fell French Canon SC", serif;
   --paragraph-font: Lato, Helvetica, sans-serif;
 
-  /* Text colors */
-  --text-dark:      #2E3B4E;    /* for body text on light bg */
-  --text-light:     white;      /* for text on dark bg */
-
-  /* Navigation */
-  --nav-bg:         var(--primary-color);
-  --nav-text:       var(--text-light);
-  --nav-hover-bg:   var(--primary-color);
-  --nav-hover-text: var(--text-light);
+  /* Text Colors */
+  --text-dark:  #2E3B4E;  /* for body text on cream */
+  --text-light: #FFFFFF;  /* for text on dark bg */
 }
 
 /*------------------------------------
-  Global Resets & Base
+  Reset & Base Styles
 ------------------------------------*/
 * {
   box-sizing: border-box;
@@ -47,6 +40,7 @@ body {
   line-height: 1.5;
 }
 
+/* Ensure all headings default dark */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
   color: var(--text-dark);
@@ -55,52 +49,64 @@ h1, h2, h3, h4, h5, h6 {
 /*------------------------------------
   Header & Navigation
 ------------------------------------*/
+/* Header background is primary */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--nav-bg);
+  background-color: var(--primary-color) !important;
   padding: 1rem;
 }
 
+/* Logo sizing */
 header .logo img {
   height: 40px;
 }
 
-nav a {
-  margin: 0 1rem;
+/* Force header titles white */
+header h1,
+header h2 {
+  color: var(--text-light) !important;
+}
+
+/* Nav links forced white and visible */
+header nav a,
+header nav a:link,
+header nav a:visited {
+  color: var(--text-light) !important;
   text-decoration: none;
-  color: var(--nav-text);
+  margin: 0 1rem;
   padding: 0.25rem 0.5rem;
 }
 
-nav a.active,
-nav a:hover {
-  background-color: var(--nav-hover-bg);
-  color: var(--nav-hover-text);
+/* Nav hover/active state */
+header nav a:hover,
+header nav a.active {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-light) !important;
   border-radius: 4px;
 }
 
 /*------------------------------------
   Hero Sections (Home & Library)
 ------------------------------------*/
+/* Hero and library-hero share this */
 .hero,
 .library-hero {
-  background-color: var(--primary-color);
-  color: var(--text-light);
+  background-color: var(--primary-color) !important;
+  color: var(--text-light) !important;
   text-align: center;
   padding: 2rem;
 }
 
+/* Force their H1 white */
 .hero h1,
 .library-hero h1 {
   color: var(--text-light) !important;
   margin-bottom: 0.5rem;
 }
 
-/*------------------------------------
-  Hero Button
-------------------------------------*/
+/* Hero button styling */
 .hero button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
